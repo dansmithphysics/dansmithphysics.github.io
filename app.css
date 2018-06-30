@@ -1727,7 +1727,7 @@ blockquote, blockquote p {
 
 @media print {
     @page {
-        margin: 0.5cm;
+        margin: 1.5cm;
     }
 
     * {
