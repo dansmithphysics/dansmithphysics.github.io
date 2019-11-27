@@ -4,9 +4,9 @@
     <title>"Secret" Santa </title>
     
     <script>
-      var secret_numbers = [1234, 4321];
-      var giver_names = ["Sir Daniel", "Madison"];
-      var taker_names = ["Madison", "Sir Daniel"];
+      var names_giver = ['Sir Dan Smith', 'Maybe Ted', 'Patrick', 'Jennnnnnnnnnnnnnnnnnnn', 'Don Jr.', 'Andrea', 'Fireman Dan', 'Kenzie', 'Willie', 'Jill', 'Mads']
+      var names_taker = ['Maybe Ted', 'Jennnnnnnnnnnnnnnnnnnn', 'Willie', 'Sir Dan Smith', 'Andrea', 'Mads', 'Don Jr.', 'Jill', 'Fireman Dan', 'Patrick', 'Kenzie']
+      var secret_numbers = [1032, 2386, 260, 1412, 1963, 1143, 1520, 1166, 1200, 1524, 3999]
     </script>
 
   </head>  
@@ -19,7 +19,7 @@
 
     <p> Type in your super secret number. </p>
 
-    <form id="frm1" action="/action_page.php">
+    <form id="frm1" onsubmit="myFunction(); return false;">
       Secret number: <input type="text" name="fname"><br>
     </form> 
 
