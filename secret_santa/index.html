@@ -1,1 +1,68 @@
-<div> Hello Secret Family. </div>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>"Secret" Santa </title>
+    
+    <script>
+      var secret_numbers = [1, 2, 3];
+      var giver_names = ["Dan", "Dannio", "Sir Daniel"];
+      var taker_names = ["Danio", "Sir Daniel", "Dan"];
+    </script>
+
+  </head>  
+
+  <body>
+
+    <center>
+      
+    <div> Hello Secret Family. </div>
+
+    <p> Type in your super secret number. </p>
+
+    <form id="frm1" action="/action_page.php">
+      Secret number: <input type="text" name="fname"><br>
+    </form> 
+
+    <button onclick="myFunction()">Enter</button>
+    
+    <p id="demo"></p>
+
+    </center>
+    
+    <script>
+      function myFunction() {
+	  var x = document.getElementById("frm1");
+	  var text = "";
+	  if(x.length != 1) {	      
+	      text = "Something went wrong with the page. Notify Dan, shame on him for trying something new and then doing it poorly.";
+	  } else{
+	      // Going to find the index of the secret number. 
+	      var index = -1;
+	      text = x.elements[0].value;
+	      for(var i = 0; i < secret_numbers.length; i++) {
+		  if(text == secret_numbers[i]) {
+		      index = i;
+		      break;
+		  }
+	      }
+
+	      text = index;
+	      
+	      if(index == -1) {
+		  text = "Invalid Secret Number.";
+	      } else {
+		  text = "<p> Hello, <strong>"+giver_names[index]+"</strong>. How have you been? Why haven't you called? I only hear from you once a year when it comes time for secret santa. I find that odd. Anyway, I've been bad. Thanks for asking. <\p>";
+		  text +="<p> You are supposed to now find an impersonal gift for <strong>"+taker_names[index]+"</strong>. The limit is 20 impersonal dollars. Good luck and happy fucking holidays. </p>"
+	      }
+
+	  }
+
+	  document.getElementById("demo").innerHTML = text;
+
+      }
+      </script>
+    
+
+  </body>
+</html>
+
